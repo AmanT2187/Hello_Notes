@@ -2,11 +2,12 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
 }
 
 android {
     namespace 'com.amati.hellonotes'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.amati.hellonotes"
@@ -16,6 +17,10 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    dataBinding{
+        enabled  = true
     }
 
     buildTypes {
