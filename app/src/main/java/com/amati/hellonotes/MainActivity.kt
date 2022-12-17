@@ -1,6 +1,8 @@
 package com.amati.hellonotes
 
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.GridLayout
@@ -13,6 +15,7 @@ import com.amati.hellonotes.Model.NotesViewModel
 import com.amati.hellonotes.adapter.INoteRVAdapter
 import com.amati.hellonotes.adapter.NoteRVAdapter
 import com.amati.hellonotes.data.Note
+import com.google.android.material.elevation.SurfaceColors
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), INoteRVAdapter {
@@ -20,6 +23,11 @@ class MainActivity : AppCompatActivity(), INoteRVAdapter {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+//        val color = SurfaceColors.SURFACE_5.getColor(this)
+//        window.statusBarColor = getColor(R.color.blue) // Set color of system statusBar same as ActionBar
+//        supportActionBar!!.setBackgroundDrawable(ColorDrawable(Color.parseColor("#2196f3")))
+
 
         rvNotes.layoutManager = GridLayoutManager(this, 2)
         val adapter = NoteRVAdapter(this, this)

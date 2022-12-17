@@ -4,18 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:padding="6dp"
     android:background="@color/white">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/noteCard"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="12dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginStart="12dp"
         android:elevation="8dp"
         android:maxWidth="120dp"
         android:maxHeight="220dp"
         android:outlineAmbientShadowColor="@color/black"
-        app:cardBackgroundColor="#B3F6FF"
+        app:cardBackgroundColor="@color/blue"
         app:cardCornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:padding="6dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textStyle="bold"
                 tools:text="Title" />
 
@@ -44,7 +48,7 @@
                 android:fontFamily="sans-serif-condensed-medium"
                 android:padding="6dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 tools:text="Notes" />
         </RelativeLayout>
 

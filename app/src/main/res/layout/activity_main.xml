@@ -7,38 +7,62 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="sans-serif-black"
-        android:padding="4dp"
-        android:text="Hello Notes"
-        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvNotes"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        tools:listitem="@layout/note_item"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:layout_height="56dp"
+        android:id="@+id/mCard"
+        app:cardBackgroundColor="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-medium"
+            android:padding="4dp"
+            android:text="Hello Notes"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.053"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="659dp"
+        android:padding="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mCard">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="4dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            tools:listitem="@layout/note_item" />
+    </RelativeLayout>
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnAdd"
-        android:src="@drawable/ic_baseline_add_24"
         android:layout_margin="12dp"
         android:padding="6dp"
+        app:backgroundTint="@color/blue"
+        android:src="@drawable/ic_baseline_add_24"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

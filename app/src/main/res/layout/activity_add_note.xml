@@ -6,6 +6,32 @@
     android:layout_height="match_parent"
     tools:context=".AddNote">
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:id="@+id/mCard"
+        app:cardBackgroundColor="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-medium"
+            android:padding="4dp"
+            android:text="Add Note"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.053"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.cardview.widget.CardView>
+
     <EditText
         android:id="@+id/addTittle"
         android:layout_width="match_parent"
@@ -18,21 +44,32 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/mCard" />
 
-    <EditText
-        android:id="@+id/addNote"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:background="@color/white"
-        android:hint="Note"
-        android:textColor="@color/black"
-        android:padding="4dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        android:layout_height="659dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addTittle" />
+        app:layout_constraintTop_toBottomOf="@+id/addTittle">
+
+        <EditText
+            android:id="@+id/addNote"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/white"
+            android:ems="10"
+            android:hint="Note"
+            android:gravity="left"
+            android:padding="4dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:textColor="@color/black" />
+    </RelativeLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
