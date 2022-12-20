@@ -1,39 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/white"
-    android:padding="6dp">
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/noteCard"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:elevation="8dp"
-        android:maxWidth="120dp"
-        android:maxHeight="220dp"
-        android:outlineAmbientShadowColor="@color/black"
-        app:cardBackgroundColor="@color/blue"
-        app:cardCornerRadius="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    app:cardCornerRadius="20dp"
+    android:id="@+id/noteCard"
+    app:cardBackgroundColor="@color/blue"
+    android:padding="4dp"
+    android:layout_margin="8dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:padding="8dp">
 
             <TextView
                 android:id="@+id/txtTittle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="6dp"
+                android:padding="8dp"
                 android:singleLine="true"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:scrollHorizontally="true"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:textColor="@color/black"
                 android:textStyle="bold"
                 tools:text="Title" />
 
@@ -42,30 +35,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/txtTittle"
-                android:fontFamily="sans-serif-condensed-medium"
-                android:padding="6dp"
-                android:fadingEdgeLength="@dimen/material_emphasis_medium"
-                android:maxLines="5"
-                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                android:textColor="@color/white"
+                android:padding="8dp"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                android:maxLines="10"
+                android:textColor="@color/black"
                 tools:text="Notes" />
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/txtTittle"
+                android:id="@+id/btnDelete"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="8dp"
                 android:layout_alignParentEnd="true"
-                android:src="@drawable/ic_baseline_delete_24" />
+                android:src="@drawable/ic_baseline_delete_24"
+                app:tint="@color/black" />
+
         </RelativeLayout>
-
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="205dp" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

@@ -7,6 +7,19 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
     <color name="blue">#2196f3</color>
+        <color name="color1">#c8e6c9</color>
+        <color name="color2">#e1bee7</color>
+        <color name="color3">#c5cae9</color>
+        <color name="color4">#fff9c4</color>
+
+    <integer-array name="noteColor">
+        <item>@color/color1</item>
+        <item>@color/color2</item>
+        <item>@color/color3</item>
+        <item>@color/color4</item>
+
+    </integer-array>
+
+
 </resources>
