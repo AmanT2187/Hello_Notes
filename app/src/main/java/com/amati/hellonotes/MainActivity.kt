@@ -11,6 +11,8 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.amati.hellonotes.Model.NotesViewModel
 import com.amati.hellonotes.adapter.INoteRVAdapter
 import com.amati.hellonotes.adapter.NoteRVAdapter
@@ -29,7 +31,7 @@ class MainActivity : AppCompatActivity(), INoteRVAdapter {
 //        supportActionBar!!.setBackgroundDrawable(ColorDrawable(Color.parseColor("#2196f3")))
 
 
-        rvNotes.layoutManager = GridLayoutManager(this, 2)
+        rvNotes.layoutManager = StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
         val adapter = NoteRVAdapter(this, this)
 
         rvNotes.adapter = adapter

@@ -28,4 +28,15 @@ class AddNote : AppCompatActivity() {
 
 
     }
+
+    override fun onBackPressed() {
+        val txtTittle = addTittle.text.toString()
+        val mNote = addNote.text.toString()
+        if(addNote.text.isNotEmpty()){
+            viewModel.insertNote(Note(txtTittle,mNote))
+            Toast.makeText(this, "$txtTittle Inserted", Toast.LENGTH_SHORT).show()
+
+        }
+        super.onBackPressed()
+    }
 }
