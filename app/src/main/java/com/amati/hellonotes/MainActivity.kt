@@ -51,6 +51,5 @@ class MainActivity : AppCompatActivity(), INoteRVAdapter {
 
     override fun onItemClicked(note: Note) {
         viewModel.deleteNote(note)
-        Toast.makeText(this, "${note.title}+Deleted", Toast.LENGTH_SHORT).show()
     }
 }

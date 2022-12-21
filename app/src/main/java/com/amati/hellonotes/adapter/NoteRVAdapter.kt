@@ -2,13 +2,16 @@ package com.amati.hellonotes.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.amati.hellonotes.AddNote
 import com.amati.hellonotes.Model.NotesViewModel
 import com.amati.hellonotes.R
 import com.amati.hellonotes.data.Note
@@ -30,7 +33,7 @@ class NoteRVAdapter(private val context: Context, private val listener : INoteRV
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
        val viewHolder = NoteViewHolder(LayoutInflater.from(context).inflate(R.layout.note_item, parent, false))
         viewHolder.btnDelete.setOnClickListener{
-            listener.onItemClicked(allNotes.get(viewHolder.adapterPosition))
+            listener.onItemClicked(allNotes[viewHolder.adapterPosition])
         }
         return viewHolder
     }
@@ -40,6 +43,13 @@ class NoteRVAdapter(private val context: Context, private val listener : INoteRV
         holder.title.text =currentNote.title
         holder.note.text= currentNote.Des
         holder.noteCard.setCardBackgroundColor(color[(color.indices).random()])
+        holder.noteCard.setOnClickListener {
+            val intent = Intent(context, AddNote::class.java)
+            intent.putExtra("tittle", currentNote.title)
+            intent.putExtra("note", currentNote.Des)
+            context.startActivity(intent)
+            listener.onItemClicked(currentNote)
+        }
     }
 
     override fun getItemCount(): Int {
